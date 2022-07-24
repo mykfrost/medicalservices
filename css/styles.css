@@ -7,6 +7,9 @@
     --color-body-darker: #5c5577;
     --color-border: #ccc;
     --border-radius: 30px;
+    --color-hover:#1c03fc;
+    --color-hover2:#03d3fc;
+    --color-btn:#d3e2e6;
   }
   
   *,
@@ -84,8 +87,180 @@
     }
   }
   
-  @media screen and (min-width: 1024px) {
-    .grid--1x3 {
-      grid-template-columns: repeat(3, 1fr);
-    }
+ /*Blocks*/
+
+ .block{
+    padding: 6rem 2rem;
+    border: 2px solid red;
+    box-sizing: border-box;
+ }
+ .block__heading{
+  font-size: 7rem;
+   margin-top: 0;
+ }
+.block__content{
+  font-size: 3rem;
+}
+ .block--skewed{
+   background: var(--color-primary);
+  clip-path: polygon(0 16%, 100% 0, 100% 100%, 0 84%);
+ }
+
+ .doc_image{
+    position: relative;
+ }
+.doc_image >img{
+    width: 100%;
+}
+.doc_image > .card__icon-container{
+    position: absolute;
+    top: 10rem;
+    right: -64px;
+}
+
+/*icons*/
+.icon {
+  align-items: center;
+     width: 40px;
+    height: 40px;
   }
+
+  .card__icon-container{
+    justify-content: center;
+    position: relative;
+  }
+  .card__icon-container .icon{
+ align-items: center;
+  }
+  .icon--small {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .icon--primary {
+    fill: var(--color-primary);
+  }
+    
+  .card__icon-container {
+    background: #f3f9fa;
+    width: 100%;
+    border-radius: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .icon-container--accent {
+    background: var(--color-accent);
+  }
+
+  /*cards*/
+
+      .card{
+      width: 35rem;
+      border-radius: 7px;
+      box-shadow: 0 0 20px 10px #f3f3f3;
+      overflow: hidden;
+      }
+
+      .card-container{
+       display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+   
+      }
+
+      .card__header , .card__body{
+        padding: 2rem 3rem;
+      }
+
+      .card--primary .card__header{
+        background:var(--color-primary);
+        color: #fff;
+      }
+
+      .card--secondary .card__header{
+        background:var(--color-secondary);
+        color: #fff;
+      }
+      .card--secondary .badge--secondary{
+        background:#02cdf1;
+      }
+
+      /*Media*/
+   
+      @media screen and (min-width: 1024px) {
+        .card__container{
+          display: flex;
+         flex-direction: row;
+         flex-wrap: nowrap;
+         }
+
+        .card__header .plan__name{
+         font-size: 2.7rem;
+        }
+      }
+      /*Plans*/
+      .plan__name{
+        color: #fff;
+        margin: 0;
+        font-weight: 500;
+        font-size: 2.4rem;
+      }
+      .plan__price{
+        font-size: 6rem;
+      }
+
+      .plan__billing-cycle{
+        font-size: 2.4rem;
+        font-weight: 300;
+        opacity: .8;
+        margin-right: 1rem;
+      }
+
+
+    .plan__description{
+    font-size:2rem;
+    font-weight: 300;
+    letter-spacing:1px;
+    }
+/*Buttons*/
+.btn{
+font-size: 1.8rem;
+font-weight: 600;
+text-transform: uppercase;
+padding: 2rem 3rem;
+border: 0;
+border-radius: 10px;
+text-align: center;
+}
+.btn--primary{
+background: var(--color-primary);
+color: #fff;
+}
+.btn--secondary{
+  background: var(--color-secondary);
+  color: #fff;
+}
+
+.btn--accent{
+  background: var(--color-accent);
+  color: #fff;
+}
+.btn--primary :hover{
+  background: var(--color-hover);
+}
+.btn--secondary :hover{
+  background: var(--color-hover2);
+}
+
+.btn--outline{
+  background: #fff;
+  color: var(--color-heading);
+  border:2px solid var(--color-btn)
+}
+
+@media screen and (min-width: 1024px) {
+  .btn{
+    font-size: 1.5rem;
+  }
+}
