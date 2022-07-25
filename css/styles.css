@@ -88,7 +88,9 @@
   }
   
  /*Blocks*/
-
+ .block__container{
+  padding: 5rem;
+ }
  .block{
     padding: 6rem 2rem;
     border: 2px solid red;
@@ -107,7 +109,7 @@
  }
 
  .doc_image{
-    position: relative;
+  position: relative;
  }
 .doc_image >img{
     width: 100%;
@@ -121,8 +123,8 @@
 /*icons*/
 .icon {
   align-items: center;
-     width: 40px;
-    height: 40px;
+     width: 64px;
+    height: 64px;
   }
 
   .card__icon-container{
@@ -142,9 +144,8 @@
   }
     
   .card__icon-container {
-    background: #f3f9fa;
+  padding-top: 4rem;
     width: 100%;
-    border-radius: 100%;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -156,40 +157,44 @@
   /*cards*/
 
       .card{
-      width: 35rem;
+        background-color: #fff;
+      width: 100%;
       border-radius: 7px;
       box-shadow: 0 0 20px 10px #f3f3f3;
       overflow: hidden;
       }
 
       .card-container{
+        padding: 2.5rem;
        display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
    
       }
-
-      .card__header , .card__body{
+      .card__body{
+        padding: 1.5rem;
+      }
+      .card__header .plan__name{
+        text-align: center;
+        font-size: 2rem;
+        color: var(--color-hover);
+       }
+      .card__header .card__body{
         padding: 2rem 3rem;
       }
-
-      .card--primary .card__header{
-        background:var(--color-primary);
-        color: #fff;
+      .card .card__body{
+        font-size: 1.8rem;
+        text-align: center;
       }
-
-      .card--secondary .card__header{
-        background:var(--color-secondary);
-        color: #fff;
+       .card--secondary .card__header{
+        color:var(--color-hover);
       }
-      .card--secondary .badge--secondary{
-        background:#02cdf1;
-      }
-
+    
       /*Media*/
    
       @media screen and (min-width: 1024px) {
         .card__container{
+          padding: 5rem;
           display: flex;
          flex-direction: row;
          flex-wrap: nowrap;
@@ -197,33 +202,27 @@
 
         .card__header .plan__name{
          font-size: 2.7rem;
+          text-align: left;
+          color: var(--color-hover);
+         
+        }
+        .card .card__body {
+          font-size: 2rem;
+          text-align: left;
         }
       }
       /*Plans*/
       .plan__name{
+        padding: 1.5rem;
         color: #fff;
         margin: 0;
-        font-weight: 500;
+        font-weight: 400;
         font-size: 2.4rem;
       }
-      .plan__price{
-        font-size: 6rem;
-      }
+     
 
-      .plan__billing-cycle{
-        font-size: 2.4rem;
-        font-weight: 300;
-        opacity: .8;
-        margin-right: 1rem;
-      }
-
-
-    .plan__description{
-    font-size:2rem;
-    font-weight: 300;
-    letter-spacing:1px;
-    }
-/*Buttons*/
+  
+ /*Buttons*/
 .btn{
 font-size: 1.8rem;
 font-weight: 600;
@@ -252,31 +251,76 @@ color: #fff;
 .btn--secondary :hover{
   background: var(--color-hover2);
 }
-
 .btn--outline{
-  justify-content: center;
   align-items: center;
-  padding:1.7rem 0 .5rem 1rem;
   background: #fff;
+  border-radius: 10px;
+  border: 0;
+  border:2px solid var(--color-btn);
   color: var(--color-heading);
-  border:2px solid var(--color-btn)
+  font-size: 1.8rem;
+  justify-content: center;
+  padding-bottom: 1.7rem;
+  padding-top: 2.5rem;
+  text-align: center;
+  text-transform: uppercase;
 }
-.call_icon > img{
-
-  background: var(--color-body);
-width: 64px;
-height: 64px;
+.buttons__wrapper{
+  padding: 5rem ;
+  }
+.my_icon{
+  
+padding: 1.5rem;
+display: inline;
+justify-content: center;
+align-items: center;
+}
+ .call_icon >img{
+padding: 1.5rem;
+background-color:#e3faf9;
+border: 0;
+display: inline;
+align-items: center;
+justify-content: center;
 border-radius: 10px;
-flex-shrink: 1;
+vertical-align:middle;
 }
-
 .call_text{
   padding-left: 1rem;
   justify-content: center;
   align-items: center;
 }
+
+
 @media screen and (min-width: 1024px) {
   .btn{
-    font-size: 1.5rem;
+   font-size: 2rem;
+    font-weight: 600;
+   text-transform: uppercase;
+   padding: 2.5rem 3.5rem;
+  border: 0;
+  border-radius: 10px;
+  text-align: center;
   }
+  .plan__name{
+    color: #fff;
+    margin: 0;
+    font-weight: 500;
+    font-size:3rem;
+  }
+  .btn--outline{
+
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    color: var(--color-heading);
+    border:2px solid var(--color-btn)
+  }
+  .buttons__wrapper{
+    padding: 10rem ;
+    }
+    .block__container{
+      padding: 10rem;
+ 
+   }
 }
