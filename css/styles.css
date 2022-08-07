@@ -1,10 +1,11 @@
 @import "./normalize.css";
+
 :root {
   --color-primary: #3456ff;
   --color-secondary: #3456ff;
   --color-accent: #ff3400;
   --color-heading: #3456ff;
-  --color-body: #918ca4;
+  --color-body: #e2e4fe;
   --color-body-darker: #5c5577;
   --color-border: #ccc;
   --border-radius: 30px;
@@ -36,6 +37,7 @@ body {
   color: var(--color-body);
   font-size: 2.4rem;
   line-height: 1.5;
+  background: var(--color-body);
 }
 
 h1,
@@ -49,6 +51,7 @@ h3 {
   font-size: 3rem;
   font-weight: 500;
 }
+
 p {
   margin-top: 0;
 }
@@ -61,9 +64,11 @@ p {
   h1 {
     font-size: 8rem;
   }
+
   h2 {
     font-size: 4rem;
   }
+
   h3 {
     font-size: 2.4rem;
   }
@@ -85,38 +90,47 @@ p {
 .block__container {
   padding: 5rem;
 }
+
 .block {
-  overflow: visible;
-  border: 2px solid red;
+  overflow: hidden;
   box-sizing: border-box;
 }
+
 .block__heading {
   font-size: 5.5rem;
   margin-top: 0;
 }
+
 .block__content {
+  color: #7d8296;
   font-size: 2.8rem;
 }
+
 .block--skewed {
-  overflow: visible;
-  background: var(--color-primary);
-  clip-path: polygon(0 16%, 100% 0, 100% 100%, 0 84%);
-}
-/*Image wrappers*/
-.image__wrapper {
-  position: absolute;
-}
-
-.doc_image {
-  position: relative;
-  content: url("../images/doc.webp");
-  left: 32px;
-  top: 32px;
-  justify-content: center;
+  border-bottom-left-radius: 60% 800px;
+  border-bottom-right-radius: 60% 300px;
+  border-top-left-radius: 60% 800px;
+  border-top-right-radius: 60% 300px;
   align-items: center;
+  margin: 0;
+  justify-content: center;
+  background: var(--color-primary);
+  clip-path: polygon(0 10%, 80% 1, 50% 90%, 1 80%);
 }
 
-.doc_image > .card__icon-container {
+.block--skewed>img {
+  width: 100%;
+}
+
+.block .block--skewed ::before {
+  display: inline-block;
+  content: url(./icons/prescription.png);
+}
+
+/*Image wrappers*/
+
+
+.doc_image>.card__icon-container {
   position: absolute;
   top: 10rem;
   right: -64px;
@@ -126,19 +140,23 @@ p {
 .icon {
   display: inline-block;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 }
+
 .icon--white {
   fill: white;
 }
+
 .card__icon-container {
   justify-content: center;
   position: relative;
 }
+
 .card__icon-container .icon {
   align-items: center;
 }
+
 .icon--small {
   width: 30px;
   height: 30px;
@@ -155,9 +173,11 @@ p {
   justify-content: center;
   align-items: center;
 }
+
 .icon-container--accent {
   background: var(--color-accent);
 }
+
 /*Image wrappers*/
 .image__wrapper {
   position: absolute;
@@ -168,6 +188,7 @@ p {
   z-index: 1;
   /*/ overflow: visible*/
 }
+
 .prescription {
   z-index: 3;
   display: inline-flex;
@@ -178,6 +199,7 @@ p {
   top: -200px;
   left: -32px;
 }
+
 .crowd-patients {
   content: url("../icons/icons8-crowd-patient-48.png");
   width: 64px;
@@ -186,10 +208,11 @@ p {
   top: 200px;
   right: -32;
 }
+
 /*cards*/
 
 .card {
-  background-color: #fff;
+  background-color: #eeeeff;
   width: 100%;
   border-radius: 7px;
   box-shadow: 0 0 20px 10px #f3f3f3;
@@ -202,21 +225,27 @@ p {
   flex-direction: column;
   flex-wrap: nowrap;
 }
+
 .card__body {
   padding: 1.5rem;
+  color: #7d8296;
 }
+
 .card__header .plan__name {
   text-align: center;
   font-size: 2rem;
   color: var(--color-hover);
 }
+
 .card__header .card__body {
   padding: 2rem 3rem;
 }
+
 .card .card__body {
   font-size: 1.8rem;
   text-align: center;
 }
+
 .card--secondary .card__header {
   color: var(--color-hover);
 }
@@ -225,12 +254,14 @@ p {
 
 @media screen and (min-width: 1024px) {
   .block__heading {
-    font-size: 7rem;
+    font-size: 6rem;
     margin-top: 0;
   }
+
   .block__content {
     font-size: 3.5rem;
   }
+
   .card__container {
     padding: 5rem;
     display: flex;
@@ -243,10 +274,12 @@ p {
     text-align: left;
     color: var(--color-hover);
   }
+
   .card .card__body {
     font-size: 2rem;
     text-align: left;
   }
+
   .icon {
     display: inline-block;
     align-items: center;
@@ -254,6 +287,7 @@ p {
     height: 64px;
   }
 }
+
 /*Plans*/
 .plan__name {
   padding: 1.5rem;
@@ -273,6 +307,7 @@ p {
   border-radius: 10px;
   text-align: center;
 }
+
 .newButton {
   display: inline-block;
   z-index: 4;
@@ -281,10 +316,12 @@ p {
   background-color: aquamarine;
   border-radius: 10px;
 }
+
 .btn--primary {
   background: var(--color-primary);
   color: #fff;
 }
+
 .btn--secondary {
   background: var(--color-secondary);
   color: #fff;
@@ -294,12 +331,15 @@ p {
   background: var(--color-accent);
   color: #fff;
 }
+
 .btn--primary :hover {
   background: var(--color-hover);
 }
+
 .btn--secondary :hover {
   background: var(--color-hover2);
 }
+
 .btn--outline {
   align-items: center;
   background: #fff;
@@ -313,6 +353,7 @@ p {
   text-align: center;
   text-transform: uppercase;
 }
+
 .btn-get_started--outline {
   font-size: 1.8rem;
   font-weight: 600;
@@ -322,16 +363,19 @@ p {
   border-radius: 10px;
   text-align: center;
 }
+
 .buttons__wrapper {
   padding: 5rem;
 }
+
 .my_icon {
   padding: 1.5rem;
   display: inline;
   justify-content: center;
   align-items: center;
 }
-.call_icon > img {
+
+.call_icon>img {
   padding: 1.5rem;
   background-color: #e3faf9;
   border: 0;
@@ -341,6 +385,7 @@ p {
   border-radius: 10px;
   vertical-align: middle;
 }
+
 .call_text {
   padding-left: 1rem;
   justify-content: center;
@@ -357,12 +402,14 @@ p {
     border-radius: 10px;
     text-align: center;
   }
+
   .plan__name {
     color: #fff;
     margin: 0;
     font-weight: 500;
     font-size: 3rem;
   }
+
   .btn--outline {
     justify-content: center;
     align-items: center;
@@ -370,13 +417,16 @@ p {
     color: var(--color-heading);
     border: 2px solid var(--color-btn);
   }
+
   .buttons__wrapper {
     padding: 10rem;
   }
+
   .block__container {
-    padding: 10rem;
+    padding: 5rem;
   }
 }
+
 /*Navigation*/
 .nav {
   background: var(--color-body);
@@ -391,18 +441,19 @@ p {
   width: 100%;
   margin: 0;
 }
+
 .nav__item {
   padding: 0.5rem 2rem;
   border-bottom: 1px solid #222;
 }
 
-.nav__item > a {
+.nav__item>a {
   text-transform: uppercase;
   color: var(--color-heading);
   transition: color 0.3s;
 }
 
-.nav__item > a:hover {
+.nav__item>a:hover {
   color: #fff;
   cursor: pointer;
 }
@@ -418,23 +469,28 @@ p {
   box-shadow: 0 0 0 3px #666;
   border-radius: 5px;
 }
+
 .collapsible--expanded .collapsible__content {
   max-height: 100%;
   opacity: 1;
 }
+
 .collapsible__content {
   max-height: 0;
   overflow: hidden;
   opacity: 0;
   transition: all 0.3s;
 }
+
 .nav__brand {
   transform: translateY(5px);
 }
+
 @media screen and (min-width: 768px) {
   .nav__toggler {
     display: none;
   }
+
   .nav__list {
     width: auto;
     display: flex;
