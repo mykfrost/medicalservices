@@ -88,7 +88,7 @@ p {
 
 /*Blocks*/
 .block__container {
-  padding: 5rem;
+  padding: 2rem;
 }
 
 .block {
@@ -128,13 +128,6 @@ p {
 }
 
 /*Image wrappers*/
-
-
-.doc_image>.card__icon-container {
-  position: absolute;
-  top: 10rem;
-  right: -64px;
-}
 
 /*icons*/
 .icon {
